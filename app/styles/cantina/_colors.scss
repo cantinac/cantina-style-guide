@@ -1,0 +1,40 @@
+/*
+Color Variables
+ */
+
+$yellow: yellow;
+$blue: blue;
+$light-blue: blue;
+$grey: grey;
+$light-grey: #ccc;
+$xlight-grey: #efefef;
+$black: #090909;
+$white: white;
+
+$colorMap: (
+  yellow: $yellow,
+  blue: $blue,
+  light-blue: $light-blue,
+  grey: $grey,
+  light-grey: $light-grey,
+  xlight-grey: $xlight-grey,
+  black: $black,
+  white: $white
+);
+
+
+/*
+Backgrounds
+ */
+
+@each $colorName, $colorVal in $colorMap {
+  // Background
+  .bg-#{$colorName} {
+    background: $colorVal;
+  }
+
+  // Color
+  .#{$colorName} {
+    color: $colorVal;
+  }
+}

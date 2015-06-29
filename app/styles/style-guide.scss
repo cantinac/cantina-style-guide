@@ -1,0 +1,10 @@
+.style-swatch {
+  padding: 3em 0;
+
+  text-align: center;
+  color: $white;
+}
+.style-swatch--invert {
+  @extend .style-swatch;
+  color: $black;
+}
