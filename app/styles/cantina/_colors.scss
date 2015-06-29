@@ -2,22 +2,50 @@
 Color Variables
  */
 
-$yellow: yellow;
-$blue: blue;
-$light-blue: blue;
-$grey: grey;
-$light-grey: #ccc;
-$xlight-grey: #efefef;
-$black: #090909;
+$yellow: #fee67f;
+$yellow-2: #fef336;
+$yellow-3: #fff1ba;
+$yellow-4: #fee778;
+$yellow-5: #fed530;
+$orange: #fda128;
+$blue: #46a5d1;
+$blue-2: #80d6fd;
+$blue-3: #62bae2;
+$blue-5: #3f96bd;
+$blue-4: #3d91b8;
+$blue-6: #256786;
+$blue-7: #80bab6;
+$grey: #838383;
+$grey-2: #f5f5f5;
+$grey-3: #ededed;
+$grey-4: #e5e5e5;
+$grey-5: #dddddd;
+$grey-6: #d8d8d8;
+$grey-7: #4a4a4a;
+$black: black;
 $white: white;
 
 $colorMap: (
   yellow: $yellow,
+  yellow-2: $yellow-2,
+  yellow-3: $yellow-3,
+  yellow-4: $yellow-4,
+  yellow-5: $yellow-5,
+  orange: $orange,
   blue: $blue,
-  light-blue: $light-blue,
+  blue-2: $blue-2,
+  blue-3: $blue-3,
+  blue-4: $blue-4,
+  blue-5: $blue-5,
+  blue-6: $blue-6,
+  blue-7: $blue-7,
   grey: $grey,
-  light-grey: $light-grey,
-  xlight-grey: $xlight-grey,
+  grey-2: $grey-2,
+  grey-3: $grey-3,
+  grey-4: $grey-4,
+  grey-5: $grey-5,
+  grey-6: $grey-6,
+  grey-7: $grey-7,
   black: $black,
   white: $white
 );
