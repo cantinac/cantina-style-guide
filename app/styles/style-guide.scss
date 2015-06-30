@@ -9,16 +9,21 @@ html, body {
 
 .main-content {
   @include container;
-  padding: 0 gutter();
+  padding: 1em gutter() 2em;
 }
 
 /**
  * Section Titles
  */
 
-.section-title {
+.section-title,
+h2.section-title {
+  margin: 0;
   padding: 0.5em;
+
   background: $blue;
+  // border-top: 4px solid transparent;
+  border-bottom: 0.25em solid $grey-4;
   color: white;
   text-align: center;
 }
