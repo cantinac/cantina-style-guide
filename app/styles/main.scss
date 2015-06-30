@@ -4,11 +4,13 @@
 
 $susy: (
   columns: 12,
-  container: 1120px,
+  container: 1400px,
   gutters: 0.25,
   global-box-sizing: border-box
 );
 @include border-box-sizing;
 
+@import 'functions';
+@import 'variables';
 @import 'cantina/cantina';
 @import 'style-guide';

@@ -33,20 +33,41 @@ h2.section-title {
  */
 
 .style-swatch {
-  @include span(6 of 12);
-
   margin-bottom: gutter();
   padding: 3em 0;
 
   text-align: center;
   color: $white;
-
-  &:nth-child(2n) {
-    @include last;
-  }
 }
 
 .style-swatch--invert {
   @extend .style-swatch;
   color: $black;
+}
+
+.style-swatch,
+.style-swatch--invert {
+  @media #{$small-only} {
+    @include span(6 of 12);
+
+    &:nth-child(2n) {
+      @include last;
+    }
+  }
+
+  @media #{$medium-only} {
+    @include span(4 of 12);
+
+    &:nth-child(3n) {
+      @include last;
+    }
+  }
+
+  @media #{$large-up} {
+    @include span(3 of 12);
+
+    &:nth-child(4n) {
+      @include last;
+    }
+  }
 }
