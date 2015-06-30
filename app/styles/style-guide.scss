@@ -1,4 +1,10 @@
 /**
+ * Variables
+ */
+
+$style-side-margins: gutter(6);
+
+/**
  * Main
  */
 
@@ -9,7 +15,7 @@ html, body {
 
 .main-content {
   @include container;
-  padding: 1em gutter() 2em;
+  padding: 1em 0 2em;
 }
 
 /**
@@ -31,6 +37,10 @@ h2.section-title {
 /**
  * Style Swatches
  */
+
+.color-list {
+  margin: 0 $style-side-margins;
+}
 
 .style-swatch {
   margin-bottom: gutter();
@@ -70,4 +80,19 @@ h2.section-title {
       @include last;
     }
   }
+}
+
+/**
+ * Styles & Previews
+ */
+
+.style-description {
+  margin: 0 $style-side-margins;
+}
+
+.style-preview {
+  padding: 1em $style-side-margins;
+  background: $grey-2;
+  border-top: 1px dotted $grey-6;
+  border-bottom: 1px dotted $grey-5;
 }
