@@ -2,12 +2,25 @@
  * Main
  */
 
-.main {
-  @include container;
+html, body {
+  margin: 0;
+  padding: 0;
 }
 
-.color-list {
+.main-content {
   @include container;
+  padding: 0 gutter();
+}
+
+/**
+ * Section Titles
+ */
+
+.section-title {
+  padding: 0.5em;
+  background: $blue;
+  color: white;
+  text-align: center;
 }
 
 /**
