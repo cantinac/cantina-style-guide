@@ -1,10 +1,33 @@
+/**
+ * Main
+ */
+
+.main {
+  @include container;
+}
+
+.color-list {
+  @include container;
+}
+
+/**
+ * Style Swatches
+ */
+
 .style-swatch {
-  margin: 1em 0;
+  @include span(6 of 12);
+
+  margin-bottom: gutter();
   padding: 3em 0;
 
   text-align: center;
   color: $white;
+
+  &:nth-child(2n) {
+    @include last;
+  }
 }
+
 .style-swatch--invert {
   @extend .style-swatch;
   color: $black;
