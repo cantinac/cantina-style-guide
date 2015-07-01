@@ -42,7 +42,18 @@ var sectionTitleController = {
 var styleController = {
     initialize: function() {
         this.$styles = $('.style');
-        this.updateAllStyles();
+        this.updateAllStyles()
+            .initListeners();
+        return this;
+    },
+
+    initListeners: function() {
+        var self = this;
+        $('.style-code-toggle').on('click', function(event) {
+            event.preventDefault();
+            var $style = $(event.currentTarget).parents('.style');
+            self.toggleCodeForStyle($style);
+        });
         return this;
     },
 
@@ -50,7 +61,8 @@ var styleController = {
         var self = this;
         this.$styles.each(function() {
             var $style = $(this);
-            self.addCodePreviewToStyle($style);
+            self.addCodePreviewToStyle($style)
+                .addCodeToggleToStyle($style);
         });
         return this;
     },
@@ -63,7 +75,7 @@ var styleController = {
 
     getCodePreviewForStyle: function($style) {
         var htmlSrc = this.getHTMLforStyle($style);
-        var $codePreview = $(this.getEmptyCodePreview());
+        var $codePreview = $(this.getEmptyCodePreviewHtml());
         var $code = $codePreview.find('code');
         $code.text(htmlSrc);
         return $codePreview;
@@ -83,8 +95,24 @@ var styleController = {
         return newHtmlLines.join('\n');
     },
 
-    getEmptyCodePreview: function() {
+    getEmptyCodePreviewHtml: function() {
         return '<div class="style-code"><pre><code class="language-markup" id="test"></code></pre></div>';
+    },
+
+    addCodeToggleToStyle: function($style) {
+        var $codeToggle = $(this.getCodeToggleHtml());
+        $style.find('.style-description').prepend($codeToggle);
+        return this;
+    },
+
+    getCodeToggleHtml: function() {
+        return '<a href="#" class="style-code-toggle">&lt; /&gt;</a>';
+    },
+
+    toggleCodeForStyle: function($style) {
+        var $codePreview = $style.find('.style-code');
+        $codePreview.slideToggle();
+        return this;
     }
 }
 
