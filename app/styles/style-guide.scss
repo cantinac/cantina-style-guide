@@ -48,7 +48,7 @@ h2.section-title {
 }
 
 /**
- * Style Swatches
+ * Color Swatches
  */
 
 .color-list {
@@ -59,8 +59,19 @@ h2.section-title {
   margin-bottom: gutter();
   padding: 3em 0;
 
-  text-align: center;
+  box-shadow: inset 0 0 0.5em rgba(130,130,130,0.5);
+  border-radius: $border-radius-sm;
   color: $white;
+  font-weight: $weight-bold;
+  line-height: 1.5;
+  text-align: center;
+
+  .style-swatch-detail {
+    display: block;
+    font-weight: $weight-regular;
+    font-size: $zeta;
+    opacity: 0.5;
+  }
 }
 
 .style-swatch--invert {

@@ -1,0 +1,19 @@
+/**
+ * Fonts
+ */
+
+html, body {
+  font-family: $font-body;
+  font-size: $font-base-size;
+}
+
+/**
+ * Font Weights
+ */
+
+.normal {
+  font-weight: $weight-regular;
+}
+b, strong, .bold {
+  font-weight: $weight-bold;
+}

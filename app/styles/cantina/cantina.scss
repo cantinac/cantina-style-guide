@@ -1,13 +1,5 @@
-@import 'cantina/fonts';
 @import 'cantina/variables';
+@import 'cantina/fonts';
 @import 'cantina/colors';
+@import 'cantina/general';
 @import 'cantina/headings';
-
-/**
- * Fonts
- */
-
-html, body {
-  font-family: $font-body;
-  font-size: $font-base-size;
-}
