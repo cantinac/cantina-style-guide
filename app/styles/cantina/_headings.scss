@@ -2,8 +2,8 @@
  * Font size classes
  */
 
-.ultra {
-  font-size: $mega;
+.giga {
+  font-size: $giga;
 }
 .mega {
   font-size: $mega;
@@ -34,13 +34,13 @@
  * Headings
  */
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5, h6 {
   font-family: $font-heading;
   font-weight: $weight-bold;
 }
 
 h1 {
-  font-size: $ultra;
+  font-size: $giga;
 }
 h2 {
   font-size: $mega;
@@ -50,4 +50,10 @@ h3 {
 }
 h4 {
   font-size: $beta;
+}
+h5 {
+  font-size: $gamma;
+}
+h6 {
+  font-size: $delta;
 }

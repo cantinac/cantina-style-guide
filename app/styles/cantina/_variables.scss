@@ -4,18 +4,18 @@
 
 // Sizes (px)
 $font-base-size: 16px;
-$ultra-px: 72px;
+$giga-px: 72px;
 $mega-px: 52px;
 $alpha-px: 42px;
 $beta-px: 28px;
-$gamma-px: 20px;
+$gamma-px: 22px;
 $delta-px: 18px;
 $epsilon-px: 16px;
 $zeta-px: 14px;
 $eta-px: 12px;
 
 // Sizes (rem)
-// $ultra: rem($ultra-px);
+// $giga: rem($giga-px);
 // $mega: rem($mega-px);
 // $alpha: rem($alpha-px);
 // $beta: rem($beta-px);
@@ -25,7 +25,7 @@ $eta-px: 12px;
 // $zeta: rem($zeta-px);
 // $eta: rem($eta-px);
 
-$ultra: $ultra-px;
+$giga: $giga-px;
 $mega: $mega-px;
 $alpha: $alpha-px;
 $beta: $beta-px;
