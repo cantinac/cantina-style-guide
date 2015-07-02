@@ -1,0 +1,78 @@
+/**
+ * Weights
+ */
+
+$weight-regular: 500;
+$weight-light: 300;
+$weight-bold: 700;
+
+/**
+ * Lato
+ */
+
+@font-face {
+  font-family: 'Lato';
+  src: url("../fonts/Lato-Regular.woff") format("woff");
+  font-weight: $weight-regular;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url("../fonts/Lato-Light.woff") format("woff");
+  font-weight: $weight-light;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url("../fonts/Lato-Bold.woff") format("woff");
+  font-weight: $weight-bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url("../fonts/Lato-Italic.woff") format("woff");
+  font-weight: $weight-regular;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url("../fonts/Lato-LightItalic.woff") format("woff");
+  font-weight: $weight-light;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url("../fonts/Lato-BoldItalic.woff") format("woff");
+  font-weight: $weight-bold;
+  font-style: italic;
+}
+
+/**
+ * Big Noodle Titling
+ */
+
+@font-face {
+  font-family: 'BigNoodleTitling';
+  src: url("../fonts/BigNoodleTitling.woff") format("woff");
+  font-weight: $weight-bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BigNoodleTitling';
+  src: url("../fonts/BigNoodleTitling-Oblique.woff") format("woff");
+  font-weight: $weight-bold;
+  font-style: italic;
+}
+
+/**
+ * Font Variables
+ */
+
+$font-body: "Lato", "Helvetica Neue", Arial, sans-serif;
+$font-heading: "BigNoodleTitling", "Helvetica Neue", Arial, sans-serif;

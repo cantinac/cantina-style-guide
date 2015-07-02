@@ -1,0 +1,53 @@
+/**
+ * Font size classes
+ */
+
+.ultra {
+  font-size: $mega;
+}
+.mega {
+  font-size: $mega;
+}
+.alpha {
+  font-size: $alpha;
+}
+.beta {
+  font-size: $beta;
+}
+.gamma {
+  font-size: $gamma;
+}
+.delta {
+  font-size: $delta;
+}
+.epsilon {
+  font-size: $epsilon;
+}
+.zeta {
+  font-size: $zeta;
+}
+.eta {
+  font-size: $eta;
+}
+
+/**
+ * Headings
+ */
+
+h1, h2, h3, h4 {
+  font-family: $font-heading;
+  font-weight: $weight-bold;
+}
+
+h1 {
+  font-size: $ultra;
+}
+h2 {
+  font-size: $mega;
+}
+h3 {
+  font-size: $alpha;
+}
+h4 {
+  font-size: $beta;
+}
