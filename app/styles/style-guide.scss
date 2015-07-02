@@ -38,13 +38,14 @@ header {
 h2.section-title {
   margin: 0;
   padding: 0.5em;
+  position: relative;
 
   background: $blue;
-  // border-top: 4px solid transparent;
   border-bottom: 0.25em solid $grey-4;
   color: white;
   font-size: $beta;
   text-align: center;
+  z-index: 2;
 }
 
 /**
@@ -111,10 +112,16 @@ h2.section-title {
  */
 
 .style-description {
-  margin: 0 $style-side-margins;
+  position: relative;
+  margin: 1em $style-side-margins;
+
+  h4 {
+    margin: 0;
+  }
 }
 
 .style-preview {
+  margin: 0 0 2em;
   padding: 1em $style-side-margins;
   background: $grey-2;
   border-top: 1px dotted $grey-6;
@@ -131,15 +138,21 @@ h2.section-title {
 }
 
 .style-code-toggle {
-  float: right;
-  padding: 0.25em;
+  position: absolute;
+  right: 0;
+  top: -1em;
+  padding: 1em;
 
-  background: $grey-7;
-  border-radius: 0.25em;
-  color: white;
+  background: $grey;
+  border-radius: 2 * $border-radius-sm;
+  color: #f8f8f2; // Match the code color
   text-decoration: none;
+  font-family: Consolas, Monaco, 'Andale Mono', monospace; // Match the code font
 
-  &:hover {
-    background: $black;
+
+  &:hover,
+  &.active {
+    background: #272822; // Match the code background
+    color: #f8f8f2; // Match the code color
   }
 }

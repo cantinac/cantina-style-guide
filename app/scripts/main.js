@@ -111,7 +111,9 @@ var styleController = {
 
     toggleCodeForStyle: function($style) {
         var $codePreview = $style.find('.style-code');
+        var $codePreviewToggle = $style.find('.style-code-toggle');
         $codePreview.slideToggle();
+        $codePreviewToggle.toggleClass('active');
         return this;
     }
 }
@@ -159,7 +161,7 @@ var colorSwatchController = {
 $(function () {
     var scrollController = new ScrollMagic.Controller();
 
-    sectionTitleController.initialize(scrollController);
     styleController.initialize();
     colorSwatchController.initialize();
+    sectionTitleController.initialize(scrollController);
 });
