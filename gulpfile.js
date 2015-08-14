@@ -9,6 +9,7 @@ var handlebars = require('gulp-handlebars');
 var wrap = require('gulp-wrap');
 var declare = require('gulp-declare');
 var concat = require('gulp-concat');
+var fileinclude = require('gulp-file-include');
 
 gulp.task('styles', function () {
   return gulp.src('app/styles/main.scss')
@@ -35,7 +36,7 @@ gulp.task('jshint', function () {
     .pipe($.if(!browserSync.active, $.jshint.reporter('fail')));
 });
 
-gulp.task('html', ['templates', 'styles'], function () {
+gulp.task('html', ['fileinclude', 'templates', 'styles'], function () {
   var assets = $.useref.assets({searchPath: ['.tmp', 'app', '.']});
 
   return gulp.src('app/*.html')
@@ -58,6 +59,23 @@ gulp.task('templates', function(){
     }))
     .pipe(concat('templates.js'))
     .pipe(gulp.dest('.tmp/scripts/templates'));
+});
+
+gulp.task('fileinclude', function() {
+  gulp.src('app/*.html')
+    .pipe(fileinclude({
+      prefix: '@@',
+      basepath: '@file'
+    }))
+    .pipe(gulp.dest('.tmp/'));
+});
+
+gulp.task('elements', function() {
+  gulp.src('app/elements/*.html')
+    .pipe(wrap('<div data-element-file="<%= file.relative %>"><%= contents %></div>'))
+    .pipe(concat('elements.html'))
+    .pipe(wrap('<div id="imported-elements">\n<%= contents %>\n</div>'))
+    .pipe(gulp.dest('.tmp/compiled'));
 });
 
 gulp.task('images', function () {
@@ -91,7 +109,7 @@ gulp.task('extras', function () {
 
 gulp.task('clean', require('del').bind(null, ['.tmp', 'dist']));
 
-gulp.task('serve', ['templates', 'styles', 'fonts'], function () {
+gulp.task('serve', ['fileinclude', 'templates', 'styles', 'fonts'], function () {
   browserSync({
     notify: false,
     port: 9000,
@@ -105,13 +123,14 @@ gulp.task('serve', ['templates', 'styles', 'fonts'], function () {
 
   // watch for changes
   gulp.watch([
-    'app/*.html',
     'app/scripts/**/*.js',
     'app/images/**/*',
+    '.tmp/*.html',
     '.tmp/fonts/**/*',
     '.tmp/scripts/**/*'
   ]).on('change', reload);
 
+  gulp.watch('app/*.html', ['fileinclude']);
   gulp.watch('app/templates/**/*.hbs', ['templates']);
   gulp.watch('app/styles/**/*.scss', ['styles']);
   gulp.watch('app/fonts/**/*', ['fonts']);
