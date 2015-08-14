@@ -9,7 +9,7 @@
 
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="/bower_components/prism/themes/prism-okaidia.css" />
+    <link rel="stylesheet" href="/bower_components/prism/themes/prism.css" />
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -143,11 +143,20 @@
     <script src="/bower_components/scrollmagic/scrollmagic/uncompressed/ScrollMagic.js"></script>
     <script src="/bower_components/prism/prism.js"></script>
     <script src="/bower_components/underscore/underscore.js"></script>
+    <script src="/bower_components/handlebars/handlebars.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
     <!-- build:js scripts/main.js -->
     <script src="scripts/main.js"></script>
+    <script>
+      $(function () {
+        var scrollController = new ScrollMagic.Controller();
+        styleController.initialize();
+        colorSwatchController.initialize();
+        sectionTitleController.initialize(scrollController);
+      });
+    </script>
     <!-- endbuild -->
 </body>
 </html>

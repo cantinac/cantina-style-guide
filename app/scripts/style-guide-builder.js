@@ -1,44 +1,6 @@
-/* jshint devel:true */
-
-var sectionTitleController = {
-    initialize: function(scrollController) {
-        this.scrollController = scrollController;
-        this.$sectionTitles = $('.section-title');
-        this.addAllSectionTitleScenes();
-        return this;
-    },
-
-    addAllSectionTitleScenes: function() {
-        var self = this;
-        this.$sectionTitles.each(function() {
-            var $sectionTitle = $(this);
-            var scene = self.getSectionTitleScene($sectionTitle);
-            scene.addTo(self.scrollController);
-        });
-        return this;
-    },
-
-    getSectionTitleScene: function($sectionTitle) {
-        return new ScrollMagic.Scene({
-                triggerElement: $sectionTitle[0],
-                triggerHook: 'onLeave',
-                duration: this.getSectionHeight($sectionTitle)
-            })
-            .setPin($sectionTitle[0], {pushFollowers: false});
-    },
-
-    getSectionHeight: function($sectionTitle) {
-        var $section = $sectionTitle.next('section');
-        return $section.length ? $section.outerHeight() : 0;
-    },
-
-    disableSectionTitleScenes: function() {
-        for(var sectionTitleScene in sectionTitleScenes) {
-            sectionTitleScene.destroy();
-        }
-    }
-};
-
+/**
+ * Controls the individual styles
+ */
 var styleController = {
     initialize: function() {
         this.$styles = $('.style');
@@ -118,6 +80,9 @@ var styleController = {
     }
 }
 
+/**
+ * Controls the color swatches
+ */
 var colorSwatchController = {
     initialize: function() {
         this.$colorSwatches = $('.color-list div');
@@ -156,12 +121,116 @@ var colorSwatchController = {
     }
 };
 
+/**
+ * Style guide builder
+ */
+var styleGuideBuilder = (function(
+        $,
+        styleController,
+        colorSwatchController,
+        styleTemplate,
+        sectionTemplate) {
 
+    var $mainContent = $('main');
 
-// $(function () {
-//     var scrollController = new ScrollMagic.Controller();
+    return {
+        initialize: function(styleData) {
+            this.sections = styleData;
+            this.addAllSections();
+            return this;
+        },
 
-//     styleController.initialize();
-//     colorSwatchController.initialize();
-//     sectionTitleController.initialize(scrollController);
-// });
+        addAllSections: function() {
+            $mainContent.empty();
+            _.each(this.sections, this.addSection, this);
+            return this;
+        },
+
+        addSection: function(section) {
+            section.$section = $(this.getRenderedSection(section));
+            this.addAllStylesForSection(section);
+            this.renderSection(section.$section);
+            return this;
+        },
+
+        getRenderedSection: function(section) {
+            return sectionTemplate(section)
+        },
+
+        renderSection: function($section) {
+            $mainContent.append(
+                $section
+            );
+            return this;
+        },
+
+        addAllStylesForSection: function(section) {
+            _.each(section.styles, function(style) {
+                this.addStyle(style, section.$section);
+            }, this);
+            return this;
+        },
+
+        addStyle: function(style, $section) {
+            this.renderStyle(style, $section);
+            return this;
+        },
+
+        renderStyle: function(style, $section) {
+            $section.append(
+                styleTemplate(style)
+            );
+            return this;
+        }
+    }
+})(
+    $,
+    styleController,
+    colorSwatchController,
+    CantinaStyleGuide.templates.style,
+    CantinaStyleGuide.templates.section
+);
+
+var styleData = [{
+        title: 'Colors',
+        styles: []
+    },{
+        title: 'Headings',
+        styles: [{
+            title: 'Typographic Scale',
+            description: 'Description',
+            content: '<strong>hello world</strong>'
+        },{
+            title: 'Headings',
+            description: 'Description',
+            content: '<strong>hello world</strong>'
+        }]
+    },{
+        title: 'Text',
+        styles: [{
+            title: 'Paragraphs',
+            description: 'Description',
+            content: '<strong>hello world</strong>'
+        },{
+            title: 'Unordered Lists',
+            description: 'Description',
+            content: '<strong>hello world</strong>'
+        },{
+            title: 'Ordered Lists',
+            description: 'Description',
+            content: '<strong>hello world</strong>'
+        }]
+    }
+];
+
+/**
+ * Build on document ready
+ */
+$(document).ready(function() {
+    styleGuideBuilder.initialize(styleData);
+
+    var scrollController = new ScrollMagic.Controller(); //TODO: move me
+    styleController.initialize();
+    colorSwatchController.initialize();
+    sectionTitleController.initialize(scrollController);
+});
