@@ -7,26 +7,23 @@ window.styleData = [{
         title: 'Headings',
         styles: [{
             title: 'Typographic Scale',
-            description: 'Description',
+            description: 'Font sizes thoughout the site should leverage the following typographic scale. Don\'t pick random font sizes.',
             contentSrc: 'type-scale.html'
         },{
             title: 'Headings',
-            description: 'Description',
+            description: 'Headings are always in <b>Lato</b> and will always be uppercase.',
             contentSrc: 'headings.html'
         }]
     },{
         title: 'Text',
         styles: [{
             title: 'Paragraphs',
-            description: 'Description',
             contentSrc: 'paragraphs.html'
         },{
             title: 'Unordered Lists',
-            description: 'Description',
             contentSrc: 'uls.html'
         },{
             title: 'Ordered Lists',
-            description: 'Description',
             contentSrc: 'ols.html'
         }]
     }
