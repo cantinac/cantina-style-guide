@@ -9,6 +9,7 @@ window.styleGuideBuilder = (function(
         styleController,
         colorSwatchController,
         styleTemplate,
+        styleChromelessTemplate,
         sectionTemplate) {
 
     var $mainContent = $('main');
@@ -66,10 +67,19 @@ window.styleGuideBuilder = (function(
         },
 
         renderStyle: function(style, $section) {
+            var template = this.getTemplateForStyle(style);
             $section.find('.main-content').append(
-                styleTemplate(style)
+                template(style)
             );
             return this;
+        },
+
+        getTemplateForStyle: function(style) {
+            if(style.isChromeless) {
+                return styleChromelessTemplate;
+            } else {
+                return styleTemplate;
+            }
         },
 
         getHtmlForStyle: function(style) {
@@ -83,5 +93,6 @@ window.styleGuideBuilder = (function(
     window.styleController,
     window.colorSwatchController,
     window.CantinaStyleGuide.templates.style,
+    window.CantinaStyleGuide.templates.styleChromeless,
     window.CantinaStyleGuide.templates.section
 );

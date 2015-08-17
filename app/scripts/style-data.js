@@ -2,7 +2,10 @@
 
 window.styleData = [{
         title: 'Colors',
-        styles: []
+        styles: [{
+            contentSrc: 'colors.html',
+            isChromeless: true // Displays styles without titles or wrapping
+        }]
     },{
         title: 'Headings',
         styles: [{
