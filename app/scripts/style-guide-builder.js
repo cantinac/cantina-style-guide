@@ -1,8 +1,11 @@
+'use strict';
+
 /**
  * Style guide builder
  */
-var styleGuideBuilder = (function(
+window.styleGuideBuilder = (function(
         $,
+        _,
         styleController,
         colorSwatchController,
         styleTemplate,
@@ -39,7 +42,7 @@ var styleGuideBuilder = (function(
         },
 
         getRenderedSection: function(section) {
-            return sectionTemplate(section)
+            return sectionTemplate(section);
         },
 
         renderSection: function($section) {
@@ -70,26 +73,15 @@ var styleGuideBuilder = (function(
         },
 
         getHtmlForStyle: function(style) {
-            var $importedElement = this.$importedElements.find('[data-element-file="' + style.contentSrc + '"]')
+            var $importedElement = this.$importedElements.find('[data-element-file="' + style.contentSrc + '"]');
             return $importedElement.length ? $importedElement.html() : '';
         }
-    }
+    };
 })(
     $,
-    styleController,
-    colorSwatchController,
-    CantinaStyleGuide.templates.style,
-    CantinaStyleGuide.templates.section
+    window._,
+    window.styleController,
+    window.colorSwatchController,
+    window.CantinaStyleGuide.templates.style,
+    window.CantinaStyleGuide.templates.section
 );
-
-/**
- * Build on document ready
- */
-$(document).ready(function() {
-    styleGuideBuilder.initialize(styleData);
-
-    var scrollController = new ScrollMagic.Controller(); //TODO: move me
-    styleController.initialize();
-    colorSwatchController.initialize();
-    sectionTitleController.initialize(scrollController);
-});

@@ -47,6 +47,19 @@
     <script src="scripts/style-controller.js"></script>
     <script src="scripts/style-data.js"></script>
     <script src="scripts/style-guide-builder.js"></script>
+    <script>
+    /**
+     * Build on document ready
+     */
+    $(document).ready(function() {
+        window.styleGuideBuilder.initialize(window.styleData);
+
+        var scrollController = new ScrollMagic.Controller(); //TODO: move me
+        window.styleController.initialize();
+        window.colorSwatchController.initialize();
+        window.sectionTitleController.initialize(scrollController);
+    });
+    </script>
     <!-- endbuild -->
 </body>
 </html>

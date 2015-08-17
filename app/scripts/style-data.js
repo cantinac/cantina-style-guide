@@ -1,4 +1,6 @@
-var styleData = [{
+'use strict';
+
+window.styleData = [{
         title: 'Colors',
         styles: []
     },{
