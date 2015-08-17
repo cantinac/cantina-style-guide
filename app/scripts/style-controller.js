@@ -48,9 +48,10 @@ var styleController = {
         var htmlLines = _.filter(html.split('\n'), function(line) {
             return line && $.trim(line);
         });
-        var spaces = _.sortBy(htmlLines, function(line) {
+        var sortedLines = _.sortBy(htmlLines, function(line) {
             return line.search(/\S/);
-        })[0].search(/\S/);
+        });
+        var spaces = sortedLines.length ? sortedLines[0].search(/\S/) : '';
         var newHtmlLines = _.map(htmlLines, function(line) {
             return line.slice(spaces);
         });

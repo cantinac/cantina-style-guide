@@ -36,7 +36,7 @@ gulp.task('jshint', function () {
     .pipe($.if(!browserSync.active, $.jshint.reporter('fail')));
 });
 
-gulp.task('html', ['fileinclude', 'templates', 'styles'], function () {
+gulp.task('html', ['elements', 'fileinclude', 'templates', 'styles'], function () {
   var assets = $.useref.assets({searchPath: ['.tmp', 'app', '.']});
 
   return gulp.src('app/*.html')
@@ -72,9 +72,8 @@ gulp.task('fileinclude', function() {
 
 gulp.task('elements', function() {
   gulp.src('app/elements/*.html')
-    .pipe(wrap('<div data-element-file="<%= file.relative %>"><%= contents %></div>'))
+    .pipe(wrap('<div data-element-file="<%= file.relative %>">\n<%= contents %>\n</div>'))
     .pipe(concat('elements.html'))
-    .pipe(wrap('<div id="imported-elements">\n<%= contents %>\n</div>'))
     .pipe(gulp.dest('.tmp/compiled'));
 });
 
@@ -109,7 +108,7 @@ gulp.task('extras', function () {
 
 gulp.task('clean', require('del').bind(null, ['.tmp', 'dist']));
 
-gulp.task('serve', ['fileinclude', 'templates', 'styles', 'fonts'], function () {
+gulp.task('serve', ['elements', 'fileinclude', 'templates', 'styles', 'fonts'], function () {
   browserSync({
     notify: false,
     port: 9000,
@@ -131,6 +130,8 @@ gulp.task('serve', ['fileinclude', 'templates', 'styles', 'fonts'], function () 
   ]).on('change', reload);
 
   gulp.watch('app/*.html', ['fileinclude']);
+  gulp.watch('app/elements/*.html', ['elements']);
+  gulp.watch('.tmp/compiled/elements.html', ['fileinclude']);
   gulp.watch('app/templates/**/*.hbs', ['templates']);
   gulp.watch('app/styles/**/*.scss', ['styles']);
   gulp.watch('app/fonts/**/*', ['fonts']);

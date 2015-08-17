@@ -13,8 +13,16 @@ var styleGuideBuilder = (function(
     return {
         initialize: function(styleData) {
             this.sections = styleData;
+            this.$importedElements = this.getImportedElements();
             this.addAllSections();
             return this;
+        },
+
+        getImportedElements: function() {
+            var $importedElements = $('#imported-elements'),
+                $cloned = $importedElements.clone();
+            $importedElements.remove();
+            return $cloned;
         },
 
         addAllSections: function() {
@@ -49,6 +57,7 @@ var styleGuideBuilder = (function(
         },
 
         addStyle: function(style, $section) {
+            style.content = this.getHtmlForStyle(style);
             this.renderStyle(style, $section);
             return this;
         },
@@ -58,6 +67,11 @@ var styleGuideBuilder = (function(
                 styleTemplate(style)
             );
             return this;
+        },
+
+        getHtmlForStyle: function(style) {
+            var $importedElement = this.$importedElements.find('[data-element-file="' + style.contentSrc + '"]')
+            return $importedElement.length ? $importedElement.html() : '';
         }
     }
 })(

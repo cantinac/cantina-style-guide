@@ -6,26 +6,26 @@ var styleData = [{
         styles: [{
             title: 'Typographic Scale',
             description: 'Description',
-            content: '<strong>hello world</strong>'
+            contentSrc: 'type-scale.html'
         },{
             title: 'Headings',
             description: 'Description',
-            content: '<strong>hello world</strong>'
+            contentSrc: 'headings.html'
         }]
     },{
         title: 'Text',
         styles: [{
             title: 'Paragraphs',
             description: 'Description',
-            content: '<strong>hello world</strong>'
+            contentSrc: 'paragraphs.html'
         },{
             title: 'Unordered Lists',
             description: 'Description',
-            content: '<strong>hello world</strong>'
+            contentSrc: 'uls.html'
         },{
             title: 'Ordered Lists',
             description: 'Description',
-            content: '<strong>hello world</strong>'
+            contentSrc: 'ols.html'
         }]
     }
 ];
