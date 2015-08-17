@@ -66,7 +66,7 @@ window.styleGuideBuilder = (function(
         },
 
         renderStyle: function(style, $section) {
-            $section.append(
+            $section.find('.main-content').append(
                 styleTemplate(style)
             );
             return this;

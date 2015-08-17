@@ -37,7 +37,7 @@ window.sectionTitleController = (function(
 
         getSectionHeight: function($sectionTitle) {
             var $section = $sectionTitle.next('section');
-            return $section.length ? $section.outerHeight() : 0;
+            return $section.length ? $section.innerHeight() : 0;
         },
 
         disableSectionTitleScenes: function(sectionTitleScenes) {
