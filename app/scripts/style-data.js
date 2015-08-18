@@ -7,6 +7,12 @@ window.styleData = [{
             isChromeless: true // Displays styles without titles or wrapping
         }]
     },{
+        title: 'Fonts',
+        styles: [{
+            title: 'Fonts',
+            contentSrc: 'fonts.html'
+        }]
+    },{
         title: 'Headings',
         styles: [{
             title: 'Typographic Scale',
@@ -23,11 +29,71 @@ window.styleData = [{
             title: 'Paragraphs',
             contentSrc: 'paragraphs.html'
         },{
+            title: 'Assorted',
+            contentSrc: 'text-etc.html'
+        }]
+    },{
+        title: 'Lists',
+        styles: [{
             title: 'Unordered Lists',
-            contentSrc: 'uls.html'
+            contentSrc: 'list-unordered.html'
         },{
             title: 'Ordered Lists',
-            contentSrc: 'ols.html'
+            contentSrc: 'list-ordered.html'
+        },{
+            title: 'Definition Lists',
+            contentSrc: 'list-definitions.html'
+        }]
+    },{
+        title: 'Forms',
+        styles: [{
+            title: 'Form Fields',
+            contentSrc: 'form-fields.html'
+        },{
+            title: 'Form Fields (Disabled)',
+            contentSrc: 'form-fields-disabled.html'
+        },{
+            title: 'Form Buttons',
+            contentSrc: 'form-buttons.html'
+        }]
+    },{
+        title: 'Tables',
+        styles: [{
+            title: 'Table (Top Headings)',
+            contentSrc: 'table.html'
+        },{
+            title: 'Table (Side Headings)',
+            contentSrc: 'table-side.html'
+        }]
+    },{
+        title: 'Media',
+        styles: [{
+            title: 'Images',
+            contentSrc: 'media-image.html'
+        },{
+            title: 'Images (linked)',
+            contentSrc: 'media-image-linked.html'
+        },{
+            title: 'Pictures',
+            contentSrc: 'media-picture.html'
+        },{
+            title: 'Videos',
+            contentSrc: 'media-video.html'
+        },{
+            title: 'SVGs',
+            contentSrc: 'media-svg.html'
+        },{
+            title: 'Audio',
+            contentSrc: 'media-audio.html'
+        }]
+    },{
+        title: 'Etc',
+        styles: [{
+            title: 'Code',
+            contentSrc: 'code.html'
+        },{
+            title: 'HR',
+            contentSrc: 'hr.html'
         }]
     }
 ];
