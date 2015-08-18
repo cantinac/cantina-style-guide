@@ -65,7 +65,7 @@ window.styleController = (function(
         },
 
         getEmptyCodePreviewHtml: function() {
-            return '<div class="style-code"><pre><code class="language-markup" id="test"></code></pre></div>';
+            return '<div class="style-code"><pre><code class="language-markup"></code></pre></div>';
         },
 
         addCodeToggleToStyle: function($style) {
