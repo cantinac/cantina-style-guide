@@ -1,0 +1,38 @@
+.icon-nav {
+
+    margin: 0 1em;
+    text-align: center;
+
+    li {
+
+        list-style: none;
+        display: inline-block;
+        font-family: $font-heading;
+        font-size: 1.1em; // Doesn't match style guide. $delta?
+        line-height: 1.3em;
+        font-weight: $weight-heading;
+
+        a {
+
+            margin: .75em;
+            padding: .25em;
+            display: block;
+            text-decoration: none;
+            border-bottom: 5px solid $white;
+
+            svg {
+                display: block;
+                margin: .25em auto;
+            }
+
+            &.active,
+            &:hover {
+                color: $blue-xlight;
+                border-bottom: 5px solid $blue-xlight;
+            }
+
+        }
+
+    }
+
+}

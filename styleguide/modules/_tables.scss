@@ -1,0 +1,29 @@
+.table-wrap {
+    margin: 1em 0;
+}
+table {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+
+    td, th {
+        padding: 0.25em 0.5em;
+        text-align: left;
+    }
+    th {
+        background: $blue-xlight;
+        color: $white;
+        font-weight: $weight-bold;
+    }
+    td {
+        background: $grey-xlight;
+        color: $text-color;
+    }
+    caption {
+        @extend h3;
+        padding-bottom: 0.25em;
+    }
+    .table-blank {
+        background: none;
+    }
+}

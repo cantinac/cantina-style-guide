@@ -1,0 +1,206 @@
+.thumbnail-item {
+
+    padding: 1em 0;
+    width: 100%;
+    color: $text-color;
+    text-decoration: none;
+
+    .thumbnail {
+
+        position: relative;
+
+        .hover {
+            position: absolute;
+            @include prefix-value(display, flex);
+            @include prefix(justify-content, center);
+            @include prefix(align-items, center);
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            text-align: center;
+            background-color: rgba($grey-dark, 0.8);
+            transition: opacity 100ms linear;
+            opacity: 0;
+
+            &:hover {
+                opacity: 1;
+            }
+
+            svg {
+                @include prefix(filter, invert(100%) contrast(200%));
+            }
+
+        }
+
+    }
+
+    .thumbnail-image {
+
+        position: relative;
+        width: 100%;
+        padding-top: 50%;
+        background-color: $grey-dark;
+        overflow: hidden;
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: auto;
+            width: 100%;
+        }
+
+        @media screen and (min-width: 35em) {
+            padding-top: 100%;
+            img {
+                height: 100%;
+                width: auto;
+            }
+        }
+
+    }
+
+    .title {
+        font-family: $font-body;
+        margin: .5em 0;
+        font-size: 1em;
+        font-weight: 400;
+        line-height: 1.4em;
+        text-transform: none;
+    }
+
+    .details {
+        margin: .5em 0;
+        text-transform: uppercase;
+        .datetime,
+        .author,
+        .address {
+            margin: 0;
+            font-size: 0.8em;
+            line-height: 1.4em;
+        }
+        .location {
+            margin: 0;
+            font-size: 0.7em;
+            font-weight: 100;
+            line-height: 1.4em;
+        }
+    }
+
+    .description {
+        margin: .5em 0;
+        font-size: $eta; //TODO: Used to be 0.8em;
+        line-height: 1.4em;
+        font-weight: 100;
+        @media screen and (min-width: 50em) {
+            font-weight: 100;
+        }
+    }
+
+    img {
+        width: 100%;
+        display: block;
+    }
+
+    svg {
+        width: 30vw;
+        height: auto;
+    }
+
+    @media screen and (min-width: 35em) {
+
+        padding: 1em .25em;
+        width: 50%;
+
+        &:nth-child(2n+1) {
+            clear: both;
+        }
+
+        svg {
+            width: 15vw;
+        }
+
+    }
+
+    @media screen and (min-width: 50em) {
+
+        width: 25%;
+
+        &:nth-child(2n+1) {
+            clear: none;
+        }
+
+        &:nth-child(4n+1) {
+            clear: both;
+        }
+
+        svg {
+            width: auto;
+        }
+
+    }
+
+}
+
+.thumbnail-item-wrapper {
+
+    margin: 0 -.5em;
+    @include clearfix();
+
+    .thumbnail-item {
+        float: left;
+
+        @media screen and (min-width: 35em) {
+
+            padding: 1em .5em;
+            width: 50%;
+
+            &:nth-child(2n+1) {
+                clear: both;
+            }
+
+            svg {
+                width: 15vw;
+            }
+
+        }
+
+        @media screen and (min-width: 50em) {
+
+            width: 25%;
+
+            &:nth-child(2n+1) {
+                clear: none;
+            }
+
+            &:nth-child(4n+1) {
+                clear: both;
+            }
+
+            svg {
+                width: auto;
+            }
+
+        }
+    }
+
+    &.thumbnail-item-wrapper-large {
+
+        .thumbnail-item {
+
+            .title {
+                font-size: $delta;
+            }
+
+            @media screen and (min-width: 50em) {
+
+                width: 33.3%;
+
+            }
+
+        }
+
+    }
+
+}

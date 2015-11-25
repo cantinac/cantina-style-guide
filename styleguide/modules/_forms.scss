@@ -1,0 +1,159 @@
+form {
+
+    fieldset {
+        border: 0;
+    }
+
+    label[for] {
+        display: block;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="url"],
+    input[type="password"],
+    input[type="number"],
+    input[type="date"],
+    input[type="time"],
+    input[type="datetime"],
+    input[type="button"],
+    input[type="submit"],
+    textarea,
+    select,
+    button {
+        display: inline-block;
+        margin: .5em 0;
+        padding: .4em .5em;
+        font-family: inherit;
+        font-size: inherit;
+        color: $text-color;
+        line-height: 1.3em;
+        border-radius: 0;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="url"],
+    input[type="password"],
+    input[type="number"],
+    input[type="date"],
+    input[type="time"],
+    input[type="datetime"],
+    select,
+    textarea {
+        display: block;
+        width: 100%;
+        border: 1px solid $grey-light;
+    }
+
+    input[type="color"] {
+        height: 2.1rem;
+        width: 4.2rem;
+        margin: .5em 0;
+    }
+    input[type="range"] {
+        height: 2.1rem;
+        margin: .5em 0;
+    }
+
+    select {
+        padding: .6em;
+        color: $white;
+        border: 0;
+        border-radius: 0;
+        background-color: $blue-mid;
+        background-image: url('data:image/svg+xml;utf8,<svg width="9px" height="7px" viewBox="0 0 9 7" xmlns="http://www.w3.org/2000/svg"><path d="M0,0 L9,0 L4.5,6.3 L0,0 Z" fill="#fff"></path></svg>');
+        background-repeat: no-repeat;
+        background-position: calc(100% - 1em) 50%;
+        @include prefix(appearance, none);
+    }
+
+    textarea {
+        min-height: 7em;
+        resize: none;
+    }
+
+    input[type="button"],
+    input[type="submit"],
+    button {
+        padding: 1em 2em;
+        color: $white;
+        font-weight: 500;
+        border: 0;
+        text-transform: uppercase;
+        text-decoration: none;
+        background-color: $orange;
+        cursor: pointer;
+        transition: background-color .15s;
+
+        &:hover{
+            background-color: $orange-mid;
+        }
+    }
+
+    input:disabled,
+    input[readonly] {
+        background: $grey-xlight;
+        color: $grey-mid;
+    }
+
+    input[type="submit"]:disabled,
+    button:disabled {
+        background: mix($grey-xlight, $orange, 66%);
+        color: $white;
+    }
+
+    ::-webkit-input-placeholder {
+        line-height: normal;
+    }
+
+    ::-moz-input-placeholder {
+        line-height: normal;
+    }
+
+    ::-ms-input-placeholder {
+        line-height: normal;
+    }
+
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    display: inline-block;
+    padding: 1em;
+    width: 1.5em;
+    height: 1.5em;
+    border: 1px solid $grey-light;
+    vertical-align: middle;
+    border-radius: 50%;
+    @include prefix(appearance, none);
+
+    &:checked {
+        background: -webkit-radial-gradient(center, ellipse cover,  rgba(255,214,0,1) 0%,rgba(255,214,0,1) 40%,rgba(255,255,255,0.0) 41%,rgba(255,255,255,0) 100%);
+    }
+}
+
+input[type="checkbox"] {
+    border-radius: 0;
+}
+
+.button {
+    padding: 1em 2em;
+    display: inline-block;
+    color: $white;
+    font-weight: 500;
+    border: 0;
+    text-transform: uppercase;
+    text-decoration: none;
+    background-color: $orange;
+    cursor: pointer;
+    transition: background-color .15s;
+
+    &:hover{
+        background-color: $orange-mid;
+    }
+}

@@ -1,0 +1,27 @@
+.page-author {
+
+    padding-top: 2em;
+    color: $grey-mid;
+    font-size: $zeta;
+
+    .avatar {
+        margin: 0 2em 0 0;
+    }
+
+    p:first-of-type {
+        margin-top: 0;
+    }
+
+    @media screen and (min-width: 40em) {
+
+        font-size: $eta;
+
+        @include prefix-value(display, flex);
+
+        .avatar {
+            @include prefix(flex, none);
+        }
+
+    }
+
+}

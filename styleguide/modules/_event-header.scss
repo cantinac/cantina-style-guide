@@ -1,0 +1,61 @@
+.event-header {
+
+    .hero-image {
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    }
+
+    .details {
+        .information {
+            padding: 2em;
+            color: $white;
+            background: $grey-dark;
+            a {
+                color: $blue-xlight;
+                text-decoration: none;
+            }
+            .datetime,
+            .address,
+            .register {
+                @include prefix-value(display, flex);
+                @include prefix(align-items, center);
+                padding: .5em;
+                svg {
+                    @include prefix(flex, none);
+                    margin-right: .5em;
+                    position: relative;
+                    top: 3px;
+                }
+            }
+        }
+    }
+
+
+    @media screen and (min-width: 60em) {
+
+        display: table;
+        width: 100%;
+
+        .hero-image {
+            width: 30em;
+            display: table-cell;
+            position: relative;
+            overflow: hidden;
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 28em;
+                width: auto;
+            }
+        }
+        .details {
+            display: table-cell;
+        }
+
+    }
+
+}

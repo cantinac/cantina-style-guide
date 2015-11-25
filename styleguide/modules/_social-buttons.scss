@@ -1,0 +1,27 @@
+.social-buttons {
+
+    margin: 2em 0;
+
+    .title,
+    a {
+        font-size: $eta;
+        text-transform: uppercase;
+    }
+
+    .title {
+        margin-right: 1em;
+        font-weight: $weight-bold;
+        color: $orange-mid;
+    }
+
+    a {
+        margin-right: .5em;
+        color: $blue-mid;
+        text-decoration: none;
+        @include prefix(transition, 'opacity .1s linear');
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+}

@@ -1,0 +1,13 @@
+.pagination {
+
+    margin: 0 0 4em;
+    color: $grey-light;
+    text-align: center;
+
+    .page {
+        display: inline-block;
+        padding: .25em;
+        text-decoration: none;
+    }
+
+}
