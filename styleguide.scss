@@ -1,25 +1,25 @@
 @charset "utf-8";
 
-@import "styleguide/colors";
-@import "styleguide/variables";
-@import "styleguide/extends";
+@import "styles/colors";
+@import "styles/variables";
+@import "styles/extends";
 
 @import "fonts/BigNoodleTitling/BigNoodleTitling.css";
 @import "fonts/Lato/Lato.css";
 
 @import
-    "styleguide/base",
-    "styleguide/modules/author",
-    "styleguide/modules/blog-post",
-    "styleguide/modules/content",
-    "styleguide/modules/event-header",
-    "styleguide/modules/forms",
-    "styleguide/modules/google-map",
-    "styleguide/modules/grid",
-    "styleguide/modules/icon-nav",
-    "styleguide/modules/page-header",
-    "styleguide/modules/pagination",
-    "styleguide/modules/social-buttons",
-    "styleguide/modules/tables",
-    "styleguide/modules/thumbnail-item"
+    "styles/base",
+    "styles/modules/author",
+    "styles/modules/blog-post",
+    "styles/modules/content",
+    "styles/modules/event-header",
+    "styles/modules/forms",
+    "styles/modules/google-map",
+    "styles/modules/grid",
+    "styles/modules/icon-nav",
+    "styles/modules/page-header",
+    "styles/modules/pagination",
+    "styles/modules/social-buttons",
+    "styles/modules/tables",
+    "styles/modules/thumbnail-item"
 ;
