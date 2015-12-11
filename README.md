@@ -1,21 +1,13 @@
 # Cantina Style Guide
 
+The de-facto collection of Cantina's common styles. For use on any Cantina-branded web projects.
+
 ## Setup
 
-**bower.json**
-
-```json
-{
-    "name": "cantina.co",
-    "dependencies": {
-        "styleguide": "git@github.com:cantinac/cantina-style-guide.git"
-    },
-    "private": true
-}
-```
+Add the Cantina Style Guide as a dependency on your project to leverage its styles, functions, and mixins.
 
 ```bash
-$ bower install
+$ npm install cantina-style-guide --save-dev
 ```
 
 ## Example
