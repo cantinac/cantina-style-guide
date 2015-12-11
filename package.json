@@ -1,0 +1,19 @@
+{
+  "name": "cantina-style-guide",
+  "version": "0.1.0",
+  "description": "Shared sass styles for Cantina-branded projects",
+  "main": "styleguide.scss",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cantinac/cantina-style-guide.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cantinac/cantina-style-guide/issues"
+  },
+  "homepage": "https://github.com/cantinac/cantina-style-guide"
+}
