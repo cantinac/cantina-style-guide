@@ -1,5 +1,5 @@
 {
-  "name": "cantina-style-guide",
+  "name": "@cantina/style-guide",
   "version": "0.1.0",
   "description": "Shared sass styles for Cantina-branded projects",
   "main": "styleguide.scss",
