@@ -13,10 +13,10 @@ $ npm install cantina-style-guide --save-dev
 ## Example
 
 ```css
-@import "../bower_components/styleguide/styles/colors";
-@import "../bower_components/styleguide/styles/variables";
-@import "../bower_components/styleguide/styles/extends";
+@import "../node_modules/styleguide/styles/colors";
+@import "../node_modules/styleguide/styles/variables";
+@import "../node_modules/styleguide/styles/extends";
 
-@import "../bower_components/styleguide/fonts/BigNoodleTitling/BigNoodleTitling.css";
-@import "../bower_components/styleguide/fonts/Lato/Lato.css";
+@import "../node_modules/styleguide/fonts/BigNoodleTitling/BigNoodleTitling.css";
+@import "../node_modules/styleguide/fonts/Lato/Lato.css";
 ```
