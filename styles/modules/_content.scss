@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body {
+    counter-reset: figure;
+}
+
 a {
     color: $text-color;
 }
@@ -45,16 +49,10 @@ p {
     margin: 1.5em 0;
 }
 
-p, li {
-    a {
-        word-break: break-all;
-    }
-}
-
 ul, ol {
     margin: 1em 2em;
     li {
-        padding: .4em 0;
+        padding: .25em 0;
     }
 }
 
@@ -111,6 +109,22 @@ dl {
     }
 }
 
+figure {
+    margin: 1em 0;
+    counter-increment: figure;
+    img {
+        margin: 0 0 1em 0;
+        max-width: 100%;
+        height: auto;
+    }
+    figcaption {
+        font-weight: $weight-bold;
+    }
+    figcaption:before {
+        content: 'Fig' counter(figure) '. — ';
+    }
+}
+
 .content-wrapper,
 .content-wrapper-small {
     margin: 0 auto 2em;
@@ -151,6 +165,20 @@ dl {
 .body-font {
     font-family: $font-body;
     font-weight: $weight-regular;
+}
+
+.footnotes {
+    margin: 4em 0;
+    font-size: $eta;
+    hr {
+        display: none;
+    }
+    li {
+        padding: 0;
+        p {
+            margin: 0;
+        }
+    }
 }
 
 /**
@@ -248,3 +276,22 @@ video {
         color: #ffffff;
     }
 }
+
+/**
+ * Text Shadows (used for better contrast)
+ */
+
+ $shadows: (
+     clothbound: #282220,
+     co-everywhere: #262037,
+     newport-folk-festival: #242736,
+     vista-higher-learning: #232324,
+     parents: #468f8f
+ );
+
+ // Loops through `$shadows` to generate text shadow classes
+ @each $shadow, $color in $shadows {
+     .ts-#{$shadow} {
+         text-shadow: 0 0 15px $color;
+     }
+ }

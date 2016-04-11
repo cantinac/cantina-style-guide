@@ -8,8 +8,26 @@
         margin: 0 2em 0 0;
     }
 
+    .author-name {
+        margin: 0 0 .5em 0;
+        font-size: $gamma;
+        font-family: $font-heading;
+        line-height: 1em;
+    }
+
     p:first-of-type {
         margin-top: 0;
+    }
+
+    @media screen and (max-width: 40em) {
+
+        .avatar {
+            margin: 0 2em 2em 0;
+            float: none;
+            width: 100%;
+            height: auto;
+        }
+
     }
 
     @media screen and (min-width: 40em) {

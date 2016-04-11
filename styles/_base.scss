@@ -26,5 +26,14 @@ body {
 }
 
 .svg-sprite {
-    display: none;
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    opacity: 0;
+}
+
+picture {
+    img {
+        width: 100%;
+    }
 }
