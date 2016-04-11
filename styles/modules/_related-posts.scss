@@ -1,0 +1,46 @@
+.related-posts {
+  background: #F6F6F6;
+  margin-top: -3rem;
+
+  .content-wrapper-small {
+    padding: $alpha 1.5em;
+    margin-bottom: 0;
+  }
+}
+
+.related-posts-title {
+  font-family: $font-heading;
+  font-size: $beta;
+  margin-bottom: $gamma;
+  line-height: 1;
+}
+
+.related-post-item {
+  margin-bottom: $beta;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.related-post-title {
+  font-size: $epsilon;
+  font-weight: 400;
+  line-height: 1.4em;
+  text-transform: none;
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline
+    }
+  }
+}
+
+.related-post-description {
+  margin: .5em 0;
+  font-size: $eta;
+  font-weight: 400;
+  line-height: 1.4em;
+}

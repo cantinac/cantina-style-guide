@@ -1,0 +1,44 @@
+.skipnav {
+    @extend %visuallyhidden;
+
+        &:focus {
+            @include prefix(transition, 'right 0.25s ease-out, background-color .15s');
+            @include visuallyrevealed();
+
+            height: 50px;
+            padding: 1.15em 1.5em 0.85em 1.5em;
+            position: fixed;
+              top: 0;
+              right: 0;
+
+            background-color: $orange;
+
+            color: $white;
+            font-size: 13px;
+            text-decoration: none;
+            text-transform: uppercase;
+
+            cursor: pointer;
+            z-index: 1000;
+
+            &:hover {
+                background-color: $orange-mid;
+            }
+
+            @media (min-width: 50em) {
+                @include prefix(transition, 'color 0.1s linear');
+
+                right: calc(160px + 1em); // Width of Make Contact button plus nav item padding
+
+                background-color: unset;
+
+                color: $grey-light;
+
+                &:hover {
+                    color: $white;
+
+                    background-color: unset;
+                }
+            }
+        }
+}
